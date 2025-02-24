@@ -21,6 +21,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Driver para conectar Spring Boot a una base de datos MySQL
+    implementation 'mysql:mysql-connector-java:8.0.27'
+
+    // Librería para leer archivos .env en Java
+    implementation 'io.github.cdimascio:java-dotenv:5.2.2'
+
 }
 
 tasks.named('test') {
