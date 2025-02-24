@@ -41,6 +41,10 @@ public class CourseService {
         return _courseRepository.findCourseByTeacherName(teacherName).stream().map(CourseEntity::toResponse).collect(Collectors.toList());
     }
 
+    public List<CourseResponse> getCourseByDurationWeeks(Integer durationWeeks) {
+        return _courseRepository.findCourseByDurationWeeks(durationWeeks).stream().map(CourseEntity::toResponse).collect(Collectors.toList());
+    }
+
     public CourseResponse createCourse(CourseRequest courseRequest) {
         if (_courseRepository.existsCourseByName(courseRequest.getNameCourse())){
             throw new CourseAlreadyExistsException("The course with name " + courseRequest.getNameCourse() + " already exists");

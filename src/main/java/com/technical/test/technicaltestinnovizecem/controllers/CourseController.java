@@ -106,6 +106,12 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.OK).body(courseResponses);
     }
 
+    @GetMapping("/getCourseByDurationWeeks/{durationWeeks}")
+    public ResponseEntity<List<CourseResponse>> getCourseByDurationWeeks(@PathVariable Integer durationWeeks) {
+        List<CourseResponse> courseResponses = courseService.getCourseByDurationWeeks(durationWeeks);
+        return ResponseEntity.status(HttpStatus.OK).body(courseResponses);
+    }
+
     @Operation(summary = "Create course",
             description = "With this method, a course is created.",
             operationId = "createCourse",
