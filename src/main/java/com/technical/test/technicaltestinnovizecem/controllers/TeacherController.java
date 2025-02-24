@@ -57,6 +57,22 @@ public class TeacherController  {
         return ResponseEntity.status(HttpStatus.OK).body(teacherResponses);
     }
 
+    @Operation(summary = "Get teacher by course name",
+            description = "With this method, information is obtained from all teachers by course name.",
+            operationId = "getTeacherByCourseName",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Teachers found",
+                            content = {@Content(schema = @Schema(implementation = TeacherResponse.class))}),
+                    @ApiResponse(responseCode = "404", description = "Teachers not found",
+                            content = {@Content(schema = @Schema(implementation = String.class))})
+            }
+    )
+    @GetMapping("/getTeacherByCourseName/{courseName}")
+    public ResponseEntity<List<TeacherResponse>> getTeacherByCourseName(@PathVariable String courseName) {
+        List<TeacherResponse> teacherResponses = teacherService.getTeacherByCourseName(courseName);
+        return ResponseEntity.status(HttpStatus.OK).body(teacherResponses);
+    }
+
     @Operation(summary = "Create teacher",
             description = "With this method, a teacher is created.",
             operationId = "createTeacher",

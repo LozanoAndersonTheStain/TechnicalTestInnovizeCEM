@@ -28,6 +28,10 @@ public class TeacherService {
         return _teacherRepository.findAll().stream().map(TeacherEntity::toResponse).collect(Collectors.toList());
     }
 
+    public List<TeacherResponse> getTeacherByCourseName(String courseName) {
+        return _teacherRepository.getTeacherByCourseName(courseName).stream().map(TeacherEntity::toResponse).collect(Collectors.toList());
+    }
+
     public TeacherResponse createTeacher(TeacherRequest teacherRequest) {
         if (_teacherRepository.existsByNameAndEmail(teacherRequest.getName(), teacherRequest.getEmail())) {
             throw new TeacherAlreadyExistsException("The teacher with name " + teacherRequest.getName() + " and email " + teacherRequest.getEmail() + " already exists");
