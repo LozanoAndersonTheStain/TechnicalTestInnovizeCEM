@@ -42,7 +42,6 @@ public class CourseController {
         }
     }
 
-
     @Operation(summary = "Get all courses",
             description = "With this method, information is obtained from all courses.",
             operationId = "getAllCourses",
@@ -56,22 +55,6 @@ public class CourseController {
     @GetMapping("/getAllCourses")
     public ResponseEntity<List<CourseResponse>> getAllCourses() {
         List<CourseResponse> courseResponses = courseService.getAllCourses();
-        return ResponseEntity.status(HttpStatus.OK).body(courseResponses);
-    }
-
-    @Operation(summary = "Get all courses by teacher name",
-            description = "With this method, information is obtained from all courses by teacher name.",
-            operationId = "getAllCoursesByTeacherName",
-            responses = {
-                    @ApiResponse(responseCode = "200", description = "Courses found",
-                            content = {@Content(schema = @Schema(implementation = CourseResponse.class))}),
-                    @ApiResponse(responseCode = "404", description = "Courses not found",
-                            content = {@Content(schema = @Schema(implementation = String.class))})
-            }
-    )
-    @GetMapping("/getAllCoursesByTeacherName/{teacherName}")
-    public ResponseEntity<List<CourseResponse>> getAllCoursesByTeacherName(@PathVariable String teacherName) {
-        List<CourseResponse> courseResponses = courseService.getAllCoursesByTeacherName(teacherName);
         return ResponseEntity.status(HttpStatus.OK).body(courseResponses);
     }
 
