@@ -23,14 +23,14 @@ public class SecurityConfig {
                         .requestMatchers("/api/teacher/**", "/api/courses/**").hasRole("ADMIN")
 
                         // Student can only access the following endpoints
-                        .requestMatchers("/api/teacher/getTeacherById/**", "/api/teacher/getAllTeachers",
-                                "/api/courses/getCourseById/**",  "/api/courses/getAllCourses",
-                               "/api/courses/getAllCoursesByPrice/{price}",  "/api/courses/getCourseByName/{courseName}").hasRole( "STUDENT")
+                        .requestMatchers("/api/teacher/getTeacherById/**", "/api/teacher/getAllTeachers" , "/api/courses/getCourseById/**",
+                                "/api/courses/getAllCourses", "api/courses/getCourseByTeacherName/**", "/api/courses/getAllCoursesByPrice/**",
+                                "/api/courses/getCourseByName/**", "/api/teacher/getTeacherByCourseName/**").hasRole( "STUDENT")
 
                         // Teacher can only access the following endpoints
                         .requestMatchers("/api/teacher/getTeacherById/**", "/api/teacher/getAllTeachers",
-                                "/api/courses/getCourseById/**", "/api/courses/getAllCourses",  "/api/courses/getAllCoursesByTeacherName/**",
-                                "/api/courses/getAllCoursesByPrice/**",  "/api/courses/getCourseByName/**", "/api/courses/updateCourse/**").hasRole("TEACHER")
+                                "/api/teacher/getTeacherByCourseName/**", "/api/courses/getCourseById/**", "/api/courses/getAllCourses",
+                                "/api/courses/getAllCoursesByPrice/**",  "/api/courses/getCourseByName/**", "/api/teacher/getTeacherByCourseName/**",  "/api/courses/updateCourse/**").hasRole("TEACHER")
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())
