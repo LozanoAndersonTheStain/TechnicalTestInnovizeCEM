@@ -5,6 +5,10 @@ import com.technical.test.technicaltestinnovizecem.contracts.responses.TeacherRe
 import com.technical.test.technicaltestinnovizecem.exeptions.teacher.InvalidTeacherDataException;
 import com.technical.test.technicaltestinnovizecem.exeptions.teacher.TeacherAlreadyExistsException;
 import com.technical.test.technicaltestinnovizecem.services.TeacherService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,24 +25,66 @@ public class TeacherController  {
         this.teacherService = teacherService;
     }
 
-        @GetMapping("/getTeacherById/{id}")
-        public ResponseEntity<TeacherResponse> getTeacherByID(@PathVariable Long id) {
-            TeacherResponse teacherResponse = teacherService.getTeacherById(id);
-            return ResponseEntity.status(HttpStatus.OK).body(teacherResponse);
-        }
+    @Operation(summary = "Get teacher by ID",
+            description = "With this method, information is obtained from a single teacher.",
+            operationId = "getTeacherByID",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Teacher found",
+                            content = {@Content(schema = @Schema(implementation = TeacherResponse.class))}),
+                    @ApiResponse(responseCode = "404", description = "Teacher not found",
+                            content = {@Content(schema = @Schema(implementation = String.class))})
+            }
+    )
+    @GetMapping("/getTeacherById/{id}")
+    public ResponseEntity<TeacherResponse> getTeacherByID(@PathVariable Long id) {
+        TeacherResponse teacherResponse = teacherService.getTeacherById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(teacherResponse);
+    }
 
-        @GetMapping("/getAllTeachers")
-        public ResponseEntity<List<TeacherResponse>> getAllTeachers() {
-            List<TeacherResponse> teacherResponses = teacherService.getAllTeachers();
-            return ResponseEntity.status(HttpStatus.OK).body(teacherResponses);
-        }
+    @Operation(summary = "Get all teachers",
+            description = "With this method, information is obtained from all teachers.",
+            operationId = "getAllTeachers",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Teachers found",
+                            content = {@Content(schema = @Schema(implementation = TeacherResponse.class))}),
+                    @ApiResponse(responseCode = "404", description = "Teachers not found",
+                            content = {@Content(schema = @Schema(implementation = String.class))})
+            }
+    )
+    @GetMapping("/getAllTeachers")
+    public ResponseEntity<List<TeacherResponse>> getAllTeachers() {
+        List<TeacherResponse> teacherResponses = teacherService.getAllTeachers();
+        return ResponseEntity.status(HttpStatus.OK).body(teacherResponses);
+    }
 
-        @GetMapping("/getAllTeachersByCourseName/{courseName}")
-        public ResponseEntity<List<TeacherResponse>> getAllTeachersByCourseName(@PathVariable String courseName) {
-            List<TeacherResponse> teacherResponses = teacherService.getAllTeachersByCourseName(courseName);
-            return ResponseEntity.status(HttpStatus.OK).body(teacherResponses);
-        }
+    @Operation(summary = "Get all teachers by course name",
+            description = "With this method, information is obtained from all teachers by course name.",
+            operationId = "getAllTeachersByCourseName",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Teachers found",
+                            content = {@Content(schema = @Schema(implementation = TeacherResponse.class))}),
+                    @ApiResponse(responseCode = "404", description = "Teachers not found",
+                            content = {@Content(schema = @Schema(implementation = String.class))})
+            }
+    )
+    @GetMapping("/getAllTeachersByCourseName/{courseName}")
+    public ResponseEntity<List<TeacherResponse>> getAllTeachersByCourseName(@PathVariable String courseName) {
+        List<TeacherResponse> teacherResponses = teacherService.getAllTeachersByCourseName(courseName);
+        return ResponseEntity.status(HttpStatus.OK).body(teacherResponses);
+    }
 
+    @Operation(summary = "Create teacher",
+            description = "With this method, a teacher is created.",
+            operationId = "createTeacher",
+            responses = {
+                    @ApiResponse(responseCode = "201", description = "Teacher created",
+                            content = {@Content(schema = @Schema(implementation = TeacherResponse.class))}),
+                    @ApiResponse(responseCode = "409", description = "Teacher already exists",
+                            content = {@Content(schema = @Schema(implementation = String.class))}),
+                    @ApiResponse(responseCode = "400", description = "Invalid teacher data",
+                            content = {@Content(schema = @Schema(implementation = String.class))})
+                }
+            )
         @PostMapping("/createTeacher")
         public ResponseEntity<TeacherResponse> createTeacher(@RequestBody TeacherRequest teacherRequest) {
             try {
@@ -51,12 +97,34 @@ public class TeacherController  {
             }
         }
 
+        @Operation(summary = "Update teacher",
+                description = "With this method, a teacher is updated.",
+                operationId = "updateTeacher",
+                responses = {
+                        @ApiResponse(responseCode = "200", description = "Teacher updated",
+                                content = {@Content(schema = @Schema(implementation = TeacherResponse.class))}),
+                        @ApiResponse(responseCode = "404", description = "Teacher not found",
+                                content = {@Content(schema = @Schema(implementation = String.class))}),
+                        @ApiResponse(responseCode = "400", description = "Invalid teacher data",
+                                content = {@Content(schema = @Schema(implementation = String.class))})
+                }
+        )
         @PutMapping("/updateTeacher/{id}")
         public ResponseEntity<TeacherResponse> updateTeacher(@PathVariable Long id ,@RequestBody TeacherRequest teacherRequest) {
             TeacherResponse teacherResponse = teacherService.updateTeacher(id, teacherRequest);
             return ResponseEntity.status(HttpStatus.OK).body(teacherResponse);
         }
 
+        @Operation(summary = "Delete teacher",
+                description = "With this method, a teacher is deleted.",
+                operationId = "deleteTeacher",
+                responses = {
+                        @ApiResponse(responseCode = "200", description = "Teacher deleted",
+                                content = {@Content(schema = @Schema(implementation = String.class))}),
+                        @ApiResponse(responseCode = "404", description = "Teacher not found",
+                                content = {@Content(schema = @Schema(implementation = String.class))})
+                }
+        )
         @DeleteMapping("/deleteTeacher/{id}")
         public ResponseEntity<Map<String, String>> deleteTeacher(@PathVariable Long id) {
             teacherService.deleteTeacher(id);
