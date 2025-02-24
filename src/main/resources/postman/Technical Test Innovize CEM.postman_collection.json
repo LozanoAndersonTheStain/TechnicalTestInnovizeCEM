@@ -1,0 +1,993 @@
+{
+	"info": {
+		"_postman_id": "6d9a5eb9-eba5-4d98-ba0c-aa37ce59607e",
+		"name": "Technical Test Innovize CEM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24188518",
+		"_collection_link": "https://blue-meadow-686769.postman.co/workspace/Api-Eafit~49d4ff4a-e325-4439-ba8c-6e9b40395436/collection/24188518-6d9a5eb9-eba5-4d98-ba0c-aa37ce59607e?action=share&source=collection_link&creator=24188518"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GetTeacherById",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "student",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "student",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/teacher/getTeacherById/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"teacher",
+										"getTeacherById",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllTeachers",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "student",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "student",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/teacher/getAllTeachers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"teacher",
+										"getAllTeachers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCourseById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/course/getCourseById/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"course",
+										"getCourseById",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllCourses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/course/getAllCourses",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"course",
+										"getAllCourses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllCoursesByPrice",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/course/getAllCoursesByPrice/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"course",
+										"getAllCoursesByPrice",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCourseByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/course/getCourseByName/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"course",
+										"getCourseByName",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "student",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "student",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GetTeacherById",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "teacher",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "teacher",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/teacher/getTeacherById/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"teacher",
+										"getTeacherById",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllTeachers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/teacher/getAllTeachers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"teacher",
+										"getAllTeachers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCourseById",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/courses/getCourseById/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"getCourseById",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllCourses",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "teacher",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "teacher",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/courses/getAllCourses",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"getAllCourses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllCoursesByPrice",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "teacher",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "teacher",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/courses/getAllCoursesByPrice/150.0",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"getAllCoursesByPrice",
+										"150.0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCourseByName",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "teacher",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "teacher",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/courses/getCourseByName/Math",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"getCourseByName",
+										"Math"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UPDATE",
+					"item": [
+						{
+							"name": "UpdateCourse",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "teacher",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "teacher",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nameCourse\": \"Math\",\r\n    \"description\": \"Advanced Math Course\",\r\n    \"durationWeeks\": 12,\r\n    \"price\": 152.0,\r\n    \"startDate\": \"2023-01-01\",\r\n    \"teacherId\": {\r\n        \"id\": 1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/courses/updateCourse/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"updateCourse",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "teacher",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "teacher",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Teacher",
+					"item": [
+						{
+							"name": "GET",
+							"item": [
+								{
+									"name": "GetTeacherById",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/teacher/getTeacherById/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"teacher",
+												"getTeacherById",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAllTeachers",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/teacher/getAllTeachers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"teacher",
+												"getAllTeachers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetTeacherByCourseName",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/teacher/getTeacherByCourseName/Sociology 2104",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"teacher",
+												"getTeacherByCourseName",
+												"Sociology 2104"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "POST",
+							"item": [
+								{
+									"name": "CreateTeacher",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"Jacinthe Amery\",\r\n  \"document\": \"2041063637\",\r\n  \"email\": \"jamery1d@blogtalkradio.com\",\r\n  \"rolUser\": \"STUDENT\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/teacher/createTeacher",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"teacher",
+												"createTeacher"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "UPDATE",
+							"item": [
+								{
+									"name": "UpdateTeacherById",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"Hollden Harboord\",\r\n  \"document\": \"1410839265\",\r\n  \"email\": \"hharboord1@reference.com\",\r\n  \"rolUser\": \"ADMIN\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/teacher/updateTeacher/3",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"teacher",
+												"updateTeacher",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "DELETE",
+							"item": [
+								{
+									"name": "DeleteTeacherById",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/teacher/deleteTeacher/53",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"teacher",
+												"deleteTeacher",
+												"53"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"auth": {
+						"type": "basic",
+						"basic": [
+							{
+								"key": "password",
+								"value": "admin",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "admin",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Course",
+					"item": [
+						{
+							"name": "GET",
+							"item": [
+								{
+									"name": "GetCourseById",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/getCourseById/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"getCourseById",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAllCourses",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/getAllCourses",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"getAllCourses"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAllCoursesByPrice",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/getAllCoursesByPrice/152.0",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"getAllCoursesByPrice",
+												"152.0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetCourseByName",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/getCourseByName/Healthcare Administration 2828",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"getCourseByName",
+												"Healthcare Administration 2828"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetCourseByTeacherName",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/getCourseByTeacherName/John Doee",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"getCourseByTeacherName",
+												"John Doee"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetCourseByDurationWeeks",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/getCourseByDurationWeeks/10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"getCourseByDurationWeeks",
+												"10"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "POST",
+							"item": [
+								{
+									"name": "CreateCourse",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"nameCourse\": \"Photography 3534\",\r\n  \"description\": \"and ethical considerations.\",\r\n  \"durationWeeks\": 28,\r\n  \"price\": 47378.48,\r\n  \"startDate\": \"2025-08-08\",\r\n    \"teacherId\": {\r\n        \"id\": 21\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/createCourse",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"createCourse"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "UPDATE",
+							"item": [
+								{
+									"name": "UpdateCourseById",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nameCourse\": \"Math\",\r\n    \"description\": \"Advanced Math Course\",\r\n    \"durationWeeks\": 12,\r\n    \"price\": 150.0,\r\n    \"startDate\": \"2023-01-01\",\r\n    \"teacherId\": {\r\n        \"id\": 1\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/updateCourse/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"updateCourse",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "DELETE",
+							"item": [
+								{
+									"name": "DeleteCourseById",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/courses/deleteCourse/23",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"courses",
+												"deleteCourse",
+												"23"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"auth": {
+						"type": "basic",
+						"basic": [
+							{
+								"key": "password",
+								"value": "admin",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "admin",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
