@@ -34,6 +34,16 @@ dependencies {
     // Lombok para reducir el código boilerplate (e.g., getters, setters)
     compileOnly 'org.projectlombok:lombok:1.18.34'
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    // Implementación del nucleo de Hibernate ORM para manejar las entidades con JPA
+    implementation 'org.hibernate.orm:hibernate-core:6.6.1.Final'
+
+    // Starter para construir aplicaciones web (incluye soporte RESTful)
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:10.1.31'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
 }
 
 tasks.named('test') {
