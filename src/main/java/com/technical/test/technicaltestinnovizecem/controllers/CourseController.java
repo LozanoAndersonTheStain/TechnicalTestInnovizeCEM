@@ -106,6 +106,16 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.OK).body(courseResponses);
     }
 
+    @Operation(summary = "Get course by duration weeks",
+            description = "With this method, information is obtained from a single course by duration weeks.",
+            operationId = "getCourseByDurationWeeks",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Course found",
+                            content = {@Content(schema = @Schema(implementation = CourseResponse.class))}),
+                    @ApiResponse(responseCode = "404", description = "Course not found",
+                            content = {@Content(schema = @Schema(implementation = String.class))})
+            }
+    )
     @GetMapping("/getCourseByDurationWeeks/{durationWeeks}")
     public ResponseEntity<List<CourseResponse>> getCourseByDurationWeeks(@PathVariable Integer durationWeeks) {
         List<CourseResponse> courseResponses = courseService.getCourseByDurationWeeks(durationWeeks);
