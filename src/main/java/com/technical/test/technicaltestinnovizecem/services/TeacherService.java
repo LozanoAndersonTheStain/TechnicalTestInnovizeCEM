@@ -2,7 +2,8 @@ package com.technical.test.technicaltestinnovizecem.services;
 
 import com.technical.test.technicaltestinnovizecem.contracts.request.TeacherRequest;
 import com.technical.test.technicaltestinnovizecem.contracts.responses.TeacherResponse;
-import com.technical.test.technicaltestinnovizecem.exeptions.course.CourseAlreadyExistsException;
+import com.technical.test.technicaltestinnovizecem.exeptions.teacher.TeacherAlreadyExistsException;
+import com.technical.test.technicaltestinnovizecem.exeptions.teacher.TeacherNotFoundException;
 import com.technical.test.technicaltestinnovizecem.models.TeacherEntity;
 import com.technical.test.technicaltestinnovizecem.repositories.TeacherRepository;
 import org.springframework.stereotype.Service;
@@ -27,19 +28,23 @@ public class TeacherService {
         return _teacherRepository.findAll().stream().map(TeacherEntity::toResponse).collect(Collectors.toList());
     }
 
-    public List<TeacherResponse> getAllTeachersByCourseName(@PathVariable String courseName) {
-        return _teacherRepository.findByCourseName(courseName).stream().map(TeacherEntity::toResponse).collect(Collectors.toList());
-    }
-
     public TeacherResponse createTeacher(TeacherRequest teacherRequest) {
         if (_teacherRepository.existsByNameAndEmail(teacherRequest.getName(), teacherRequest.getEmail())) {
-            throw new CourseAlreadyExistsException("The teacher with name " + teacherRequest.getName() + " and email " + teacherRequest.getEmail() + " already exists");
+            throw new TeacherAlreadyExistsException("The teacher with name " + teacherRequest.getName() + " and email " + teacherRequest.getEmail() + " already exists");
         }
         return _teacherRepository.save(teacherRequest.toEntity()).toResponse();
     }
 
     public TeacherResponse updateTeacher(@PathVariable Long id, TeacherRequest teacherRequest) {
-        return _teacherRepository.save(teacherRequest.toEntity()).toResponse();
+        TeacherEntity existTeacher = _teacherRepository.findById(id)
+                .orElseThrow(() -> new TeacherNotFoundException("The teacher with id " + id + " does not exist"));
+
+        existTeacher.setName(teacherRequest.getName());
+        existTeacher.setDocument(teacherRequest.getDocument());
+        existTeacher.setEmail(teacherRequest.getEmail());
+        existTeacher.setRolUser(teacherRequest.getRolUser());
+
+        return _teacherRepository.save(existTeacher).toResponse();
     }
 
     public void deleteTeacher(Long id) {
