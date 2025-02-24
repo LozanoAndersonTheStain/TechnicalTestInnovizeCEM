@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface CourseRepository extends JpaRepository<CourseEntity, Long> {
-    @Query("SELECT c FROM cursos  c WHERE c.teacherId.name = :teacherName")
-    List<CourseEntity> findAllByTeacherName(String teacherName);
+    @Query("SELECT c FROM cursos c JOIN c.teacherId t WHERE t.name = :teacherName")
+    List<CourseEntity> findCourseByTeacherName(String teacherName);
 
     @Query("SELECT c FROM cursos  c WHERE c.price = :price")
     List<CourseEntity> findAllByPrice(Double price);

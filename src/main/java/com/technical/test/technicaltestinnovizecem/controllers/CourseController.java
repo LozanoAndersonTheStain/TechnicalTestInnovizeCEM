@@ -90,6 +90,22 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.OK).body(courseResponses);
     }
 
+    @Operation(summary = "Get course by teacher name",
+            description = "With this method, information is obtained from a single course by teacher name.",
+            operationId = "getCourseByTeacherName",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Course found",
+                            content = {@Content(schema = @Schema(implementation = CourseResponse.class))}),
+                    @ApiResponse(responseCode = "404", description = "Course not found",
+                            content = {@Content(schema = @Schema(implementation = String.class))})
+            }
+    )
+    @GetMapping("/getCourseByTeacherName/{teacherName}")
+    public ResponseEntity<List<CourseResponse>> getCourseByTeacherName(@PathVariable String teacherName) {
+        List<CourseResponse> courseResponses = courseService.getCourseByTeacherName(teacherName);
+        return ResponseEntity.status(HttpStatus.OK).body(courseResponses);
+    }
+
     @Operation(summary = "Create course",
             description = "With this method, a course is created.",
             operationId = "createCourse",
