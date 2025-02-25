@@ -4,7 +4,7 @@
 		"name": "Technical Test Innovize CEM",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "24188518",
-		"_collection_link": "https://blue-meadow-686769.postman.co/workspace/Api-Eafit~49d4ff4a-e325-4439-ba8c-6e9b40395436/collection/24188518-6d9a5eb9-eba5-4d98-ba0c-aa37ce59607e?action=share&source=collection_link&creator=24188518"
+		"_collection_link": "https://blue-meadow-686769.postman.co/workspace/49d4ff4a-e325-4439-ba8c-6e9b40395436/collection/24188518-6d9a5eb9-eba5-4d98-ba0c-aa37ce59607e?action=share&source=collection_link&creator=24188518"
 	},
 	"item": [
 		{
@@ -44,7 +44,8 @@
 										"getTeacherById",
 										"1"
 									]
-								}
+								},
+								"description": "Obtiene la información de un profesor por su ID.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del profesor.\n        \n- Respuestas:\n    \n    - **200:** Profesor encontrado.\n        \n    - **404:** Profesor no encontrado."
 							},
 							"response": []
 						},
@@ -78,7 +79,8 @@
 										"teacher",
 										"getAllTeachers"
 									]
-								}
+								},
+								"description": "Obtiene la información de todos los profesores.\n\n- Respuestas:\n    \n    - **200:** Profesores encontrados.\n        \n    - **404:** Profesores no encontrados."
 							},
 							"response": []
 						},
@@ -98,7 +100,8 @@
 										"getCourseById",
 										""
 									]
-								}
+								},
+								"description": "Obtiene la información de un curso por su ID.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del curso.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
 							},
 							"response": []
 						},
@@ -117,7 +120,8 @@
 										"course",
 										"getAllCourses"
 									]
-								}
+								},
+								"description": "Obtiene la información de todos los cursos.\n\n- Respuestas:\n    \n    - **200:** Cursos encontrados.\n        \n    - **404:** Cursos no encontrados."
 							},
 							"response": []
 						},
@@ -137,7 +141,8 @@
 										"getAllCoursesByPrice",
 										""
 									]
-								}
+								},
+								"description": "Obtiene la información de todos los cursos por precio.\n\n- Parámetros:\n    \n    - **price** (Path): Precio del curso.\n        \n- Respuestas:\n    \n    - **200:** Cursos encontrados.\n        \n    - **404:** Cursos no encontrados."
 							},
 							"response": []
 						},
@@ -157,13 +162,58 @@
 										"getCourseByName",
 										""
 									]
-								}
+								},
+								"description": "Obtiene la información de un curso por su nombre.\n\n- Parámetros:\n    \n    - **name** (Path): Nombre del curso.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
+							},
+							"response": []
+						},
+						{
+							"name": "GetCourseByTeacherName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/courses/getCourseByTeacherName/Barbi Rubinowitsch",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"getCourseByTeacherName",
+										"Barbi Rubinowitsch"
+									]
+								},
+								"description": "Obtiene la información de un curso por el nombre del profesor.\n\n- Parámetros:\n    \n    - **teacherName** (Path): Nombre del profesor.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
+							},
+							"response": []
+						},
+						{
+							"name": "GetCourseByDurationWeeks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/courses/getCourseByDurationWeeks/10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"getCourseByDurationWeeks",
+										"10"
+									]
+								},
+								"description": "Obtiene la información de un curso por la duración en semanas.\n\n- Parámetros:\n    \n    - **durationWeeks** (Path): Duración del curso en semanas.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "En esta carpeta se encuentran solamente los metodos get a los cuales tiene acceso el usuario con el rol student."
 				}
 			],
+			"description": "En esta carpeta se encuentran los diferentes metodos para a los cuales un estudiante puede acceder",
 			"auth": {
 				"type": "basic",
 				"basic": [
@@ -239,7 +289,8 @@
 										"getTeacherById",
 										"1"
 									]
-								}
+								},
+								"description": "Obtiene la información de un profesor por su ID.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del profesor.\n        \n- Respuestas:\n    \n    - **200:** Profesor encontrado.\n        \n    - **404:** Profesor no encontrado."
 							},
 							"response": []
 						},
@@ -258,28 +309,14 @@
 										"teacher",
 										"getAllTeachers"
 									]
-								}
+								},
+								"description": "Obtiene la información de todos los profesores.\n\n- Respuestas:\n    \n    - **200:** Profesores encontrados.\n        \n    - **404:** Profesores no encontrados."
 							},
 							"response": []
 						},
 						{
 							"name": "GetCourseById",
 							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "admin",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "admin",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -293,7 +330,8 @@
 										"getCourseById",
 										"1"
 									]
-								}
+								},
+								"description": "Obtiene la información de un curso por su ID.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del curso.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
 							},
 							"response": []
 						},
@@ -327,7 +365,8 @@
 										"courses",
 										"getAllCourses"
 									]
-								}
+								},
+								"description": "Obtiene la información de todos los cursos.\n\n- Respuestas:\n    \n    - **200:** Cursos encontrados.\n        \n    - **404:** Cursos no encontrados."
 							},
 							"response": []
 						},
@@ -362,7 +401,8 @@
 										"getAllCoursesByPrice",
 										"150.0"
 									]
-								}
+								},
+								"description": "Obtiene la información de todos los cursos por precio.\n\n- Parámetros:\n    \n    - **price** (Path): Precio del curso.\n        \n- Respuestas:\n    \n    - **200:** Cursos encontrados.\n        \n    - **404:** Cursos no encontrados."
 							},
 							"response": []
 						},
@@ -397,11 +437,76 @@
 										"getCourseByName",
 										"Math"
 									]
-								}
+								},
+								"description": "Obtiene la información de un curso por su nombre.\n\n- Parámetros:\n    \n    - **name** (Path): Nombre del curso.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
+							},
+							"response": []
+						},
+						{
+							"name": "GetCourseByTeacherName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/courses/getCourseByTeacherName/Barbi Rubinowitsch",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"getCourseByTeacherName",
+										"Barbi Rubinowitsch"
+									]
+								},
+								"description": "Obtiene la información de un curso por el nombre del profesor.\n\n- Parámetros:\n    \n    - **teacherName** (Path): Nombre del profesor.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
+							},
+							"response": []
+						},
+						{
+							"name": "GetCourseByDurationWeeks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/courses/getCourseByDurationWeeks/10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"getCourseByDurationWeeks",
+										"10"
+									]
+								},
+								"description": "Obtiene la información de un curso por la duración en semanas.\n\n- Parámetros:\n    \n    - **durationWeeks** (Path): Duración del curso en semanas.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
+							},
+							"response": []
+						},
+						{
+							"name": "GetTeacherByCourseName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/teacher/getTeacherByCourseName/Sociology 2104",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"teacher",
+										"getTeacherByCourseName",
+										"Sociology 2104"
+									]
+								},
+								"description": "Obtiene la información de un curso por el nombre del profesor.\n\n- Parámetros:\n    \n    - **teacherName** (Path): Nombre del profesor.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "En esta carpeta se encuentran solamente los metodos get a los cuales tiene acceso el usuario con el rol student."
 				},
 				{
 					"name": "UPDATE",
@@ -446,13 +551,16 @@
 										"updateCourse",
 										"1"
 									]
-								}
+								},
+								"description": "Actualiza la información de un curso existente.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del curso.\n        \n    - Body: Objeto **CourseRequest** con los nuevos datos del curso.\n        \n    - Respuestas:\n        \n        - **200:** Curso actualizado.\n            \n        - **404:** Curso no encontrado."
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "En este se encuentra el unico metodo el cual puede realizar un profesor a diferencia de solo obtener información"
 				}
 			],
+			"description": "En esta carpeta se encuentran los diferentes metodos para a los cuales un profesor puede acceder",
 			"auth": {
 				"type": "basic",
 				"basic": [
@@ -516,7 +624,8 @@
 												"getTeacherById",
 												"1"
 											]
-										}
+										},
+										"description": "Obtiene la información de un profesor por su ID.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del profesor.\n        \n- Respuestas:\n    \n    - **200:** Profesor encontrado.\n        \n    - **404:** Profesor no encontrado."
 									},
 									"response": []
 								},
@@ -535,7 +644,8 @@
 												"teacher",
 												"getAllTeachers"
 											]
-										}
+										},
+										"description": "Obtiene la información de todos los profesores.\n\n- Respuestas:\n    \n    - **200:** Profesores encontrados.\n        \n    - **404:** Profesores no encontrados."
 									},
 									"response": []
 								},
@@ -555,7 +665,8 @@
 												"getTeacherByCourseName",
 												"Sociology 2104"
 											]
-										}
+										},
+										"description": "Obtiene la información de un curso por el nombre del profesor.\n\n- Parámetros:\n    \n    - **teacherName** (Path): Nombre del profesor.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
 									},
 									"response": []
 								}
@@ -588,7 +699,8 @@
 												"teacher",
 												"createTeacher"
 											]
-										}
+										},
+										"description": "Crea un nuevo profesor.\n\n- Body: Objeto **TeacherRequest** con los datos del profesor.\n    \n- Respuestas:\n    \n    - **201:** Profesor creado.\n        \n    - **409:** El profesor ya existe.\n        \n    - **400:** Datos del profesor inválidos."
 									},
 									"response": []
 								}
@@ -622,7 +734,8 @@
 												"updateTeacher",
 												"3"
 											]
-										}
+										},
+										"description": "Actualiza la información de un profesor existente.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del profesor.\n        \n- Body: Objeto **TeacherRequest** con los nuevos datos del profesor.\n    \n- Respuestas:\n    \n    - 200: Profesor actualizado.\n        \n    - 404: Profesor no encontrado.\n        \n    - 400: Datos del profesor inválidos."
 									},
 									"response": []
 								}
@@ -647,11 +760,13 @@
 												"deleteTeacher",
 												"53"
 											]
-										}
+										},
+										"description": "Elimina un profesor por su ID.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del profesor.\n        \n- Respuestas:\n    \n    - **200:** Profesor eliminado.\n        \n    - **404:** Profesor no encontrado."
 									},
 									"response": []
 								}
-							]
+							],
+							"description": "En esta se encuentra el metodo de eliminación de un porfesor el cual es una accion que solo puede hacer un administrador"
 						}
 					],
 					"auth": {
@@ -714,7 +829,8 @@
 												"getCourseById",
 												"1"
 											]
-										}
+										},
+										"description": "Obtiene la información de un curso por su ID.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del curso.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
 									},
 									"response": []
 								},
@@ -733,7 +849,8 @@
 												"courses",
 												"getAllCourses"
 											]
-										}
+										},
+										"description": "Obtiene la información de todos los cursos.\n\n- Respuestas:\n    \n    - **200:** Cursos encontrados.\n        \n    - **404:** Cursos no encontrados."
 									},
 									"response": []
 								},
@@ -743,7 +860,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/courses/getAllCoursesByPrice/152.0",
+											"raw": "{{baseUrl}}/api/courses/getAllCoursesByPrice/150.0",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -751,9 +868,10 @@
 												"api",
 												"courses",
 												"getAllCoursesByPrice",
-												"152.0"
+												"150.0"
 											]
-										}
+										},
+										"description": "Obtiene la información de todos los cursos por precio.\n\n- Parámetros:\n    \n    - **price** (Path): Precio del curso.\n        \n- Respuestas:\n    \n    - **200:** Cursos encontrados.\n        \n    - **404:** Cursos no encontrados."
 									},
 									"response": []
 								},
@@ -773,7 +891,8 @@
 												"getCourseByName",
 												"Healthcare Administration 2828"
 											]
-										}
+										},
+										"description": "Obtiene la información de un curso por su nombre.\n\n- Parámetros:\n    \n    - **name** (Path): Nombre del curso.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
 									},
 									"response": []
 								},
@@ -793,7 +912,8 @@
 												"getCourseByTeacherName",
 												"John Doee"
 											]
-										}
+										},
+										"description": "Obtiene la información de un curso por el nombre del profesor.\n\n- Parámetros:\n    \n    - **teacherName** (Path): Nombre del profesor.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
 									},
 									"response": []
 								},
@@ -813,7 +933,8 @@
 												"getCourseByDurationWeeks",
 												"10"
 											]
-										}
+										},
+										"description": "Obtiene la información de un curso por la duración en semanas.\n\n- Parámetros:\n    \n    - **durationWeeks** (Path): Duración del curso en semanas.\n        \n- Respuestas:\n    \n    - **200:** Curso encontrado.\n        \n    - **404:** Curso no encontrado."
 									},
 									"response": []
 								}
@@ -829,7 +950,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"nameCourse\": \"Photography 3534\",\r\n  \"description\": \"and ethical considerations.\",\r\n  \"durationWeeks\": 28,\r\n  \"price\": 47378.48,\r\n  \"startDate\": \"2025-08-08\",\r\n    \"teacherId\": {\r\n        \"id\": 21\r\n    }\r\n}",
+											"raw": "{\r\n  \"nameCourse\": \"Photography 3587\",\r\n  \"description\": \"and ethical considerations.\",\r\n  \"durationWeeks\": 28,\r\n  \"price\": 47378.48,\r\n  \"startDate\": \"2025-08-08\",\r\n    \"teacherId\": {\r\n        \"id\": 21\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -846,7 +967,8 @@
 												"courses",
 												"createCourse"
 											]
-										}
+										},
+										"description": "Crea un nuevo curso.\n\n- Body: Objeto **CourseRequest** con los datos del curso.\n    \n- Respuestas:\n    \n    - **201:** Curso creado.\n        \n    - **400:** Solicitud incorrecta.\n        \n    - **409:** El curso ya existe."
 									},
 									"response": []
 								}
@@ -880,7 +1002,8 @@
 												"updateCourse",
 												"1"
 											]
-										}
+										},
+										"description": "Actualiza la información de un curso existente.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del curso.\n        \n- Body: Objeto **CourseRequest** con los nuevos datos del curso.\n    \n- Respuestas:\n    \n    - **200:** Curso actualizado.\n        \n    - **404:** Curso no encontrado."
 									},
 									"response": []
 								}
@@ -905,7 +1028,8 @@
 												"deleteCourse",
 												"23"
 											]
-										}
+										},
+										"description": "Elimina un curso por su ID.\n\n- Parámetros:\n    \n    - **id** (Path): Identificador del curso.\n        \n- Respuestas:\n    \n    - **200:** Curso eliminado.\n        \n    - **404:** Curso no encontrado."
 									},
 									"response": []
 								}
@@ -951,6 +1075,7 @@
 					]
 				}
 			],
+			"description": "En esta carpeta se encuentran los diferentes metodos para a los cuales un administrador puede acceder",
 			"auth": {
 				"type": "basic",
 				"basic": [
